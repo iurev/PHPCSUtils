@@ -27,7 +27,6 @@ env:
 
 jobs:
   lint:
-    if: ${{ github.ref != 'refs/heads/develop' }}
     runs-on: ubuntu-latest
 
     strategy:
