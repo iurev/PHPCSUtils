@@ -392,7 +392,7 @@ jobs:
     steps:
       - name: Coveralls Finished (normal)
         if: ${{ github.actor != 'dependabot[bot]' }}
-        uses: iurev/coveralls-github-action@v2
+        uses: iurev/coveralls-github-action@v2.2.2
         with:
           github-token: ${{ secrets.COVERALLS_TOKEN }}
           parallel-finished: true
@@ -402,7 +402,7 @@ jobs:
       # Ref: https://github.com/lemurheavy/coveralls-public/issues/1721
       - name: Coveralls Finished (Dependabot)
         if: ${{ github.actor == 'dependabot[bot]' }}
-        uses: iurev/coveralls-github-action@v2
+        uses: iurev/coveralls-github-action@v2.2.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           parallel-finished: true
