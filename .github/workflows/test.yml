@@ -395,13 +395,3 @@ jobs:
         run: curl -sL https://github.com/iurev/coveralls-github-action/releases/download/2.2.2/coveralls-linux.tar.gz | tar -xz && ./coveralls
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
-
-      # Dependabot does not have access to secrets, other than the GH token.
-      # Ref: https://docs.github.com/en/code-security/dependabot/working-with-dependabot/automating-dependabot-with-github-actions
-      # Ref: https://github.com/lemurheavy/coveralls-public/issues/1721
-      - name: Coveralls Finished (Dependabot)
-        if: ${{ github.actor == 'dependabot[bot]' }}
-        uses: iurev/coveralls-github-action@v2.2.2
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true
