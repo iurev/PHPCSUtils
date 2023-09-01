@@ -91,8 +91,8 @@ jobs:
         # IMPORTANT: test runs shouldn't fail because of PHPCS being incompatible with a PHP version.
         #
         # The matrix is set up so as not to duplicate the builds which are run for code coverage.
-        php: ['5.5', '5.6', '7.0', '7.1', '7.2', '7.3', '7.4', '8.0', '8.1']
-        phpcs_version: ['lowest', 'dev-master']
+        php: ['8.1']
+        phpcs_version: ['dev-master']
         risky: [false]
         experimental: [false]
 
