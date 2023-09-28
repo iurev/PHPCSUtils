@@ -344,6 +344,6 @@ jobs:
       # Global install is used to prevent a conflict with the local composer.lock.
       - name: Coveralls
         if: ${{ success() }}
-        run: curl -sL https://github.com/iurev/coveralls-github-action/releases/download/2.2.2/coveralls-linux.tar.gz | tar -xz && ./coveralls
+        uses: coverallsapp/github-action@v2
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
