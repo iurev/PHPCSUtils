@@ -117,6 +117,6 @@ jobs:
         if: ${{ success() }}
         uses: coverallsapp/github-action@SR-69/ability-to-select-version-of-coverage-reporter-public-issue-170
         with:
-          reporter-version: 'v2.2.1'
+          reporter-version: 'v0.6.1'
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
