@@ -97,49 +97,6 @@ jobs:
         experimental: [false]
 
         include:
-          - php: '5.6'
-            phpcs_version: 'lowest'
-            risky: false
-            experimental: false
-            extensions: ':iconv' # Run with iconv disabled.
-          - php: '8.0'
-            phpcs_version: 'dev-master'
-            risky: false
-            experimental: false
-            extensions: ':iconv' # Run with iconv disabled.
-
-          # Experimental builds. These are allowed to fail.
-          - php: '8.3'
-            phpcs_version: 'dev-master'
-            risky: false
-            experimental: true
-
-          - php: '7.4'
-            phpcs_version: '4.0.x-dev'
-            risky: false
-            experimental: true
-
-          # Run risky tests separately.
-          - php: '7.4'
-            phpcs_version: '4.0.x-dev'
-            risky: true
-            experimental: true
-
-          - php: '5.4'
-            phpcs_version: 'lowest'
-            risky: true
-            experimental: true
-
-          - php: '5.4'
-            phpcs_version: 'dev-master'
-            risky: true
-            experimental: true
-
-          - php: '8.2'
-            phpcs_version: 'lowest'
-            risky: true
-            experimental: true
-
           - php: '8.2'
             phpcs_version: 'dev-master'
             risky: true
@@ -344,6 +301,8 @@ jobs:
       # Global install is used to prevent a conflict with the local composer.lock.
       - name: Coveralls
         if: ${{ success() }}
-        uses: coverallsapp/github-action@v2
+        uses: iurev/coveralls-github-action@v2
+        with:
+          reporter-version: 'v2.2.1'
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_TOKEN }}
