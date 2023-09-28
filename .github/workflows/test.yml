@@ -115,7 +115,7 @@ jobs:
       # Global install is used to prevent a conflict with the local composer.lock.
       - name: Coveralls
         if: ${{ success() }}
-        uses: iurev/coveralls-github-action@v2
+        uses: iurev/coveralls-github-action@main
         with:
           reporter-version: 'v2.2.1'
         env:
